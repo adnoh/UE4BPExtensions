@@ -92,7 +92,7 @@ class BXBLEXTENSIONS_API UBxBLibrary : public UBlueprintFunctionLibrary
 	static void Branch_INTLessOREqual(int32 Check, int32 Against, TEnumAsByte<EN_IfThenElse>&Branches);
 	//
 	/** Branch:: Checks if int 'A' is greater or equal to int 'B'. */
-	UFUNCTION(BlueprintCallable, Category = "Blueprint Extensions|Branches", meta = (HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject", CompactNodeTitle = ">=", FriendlyName = "A greater pr equal to B?", Keywords = "bxbl int greater equal", ExpandEnumAsExecs = "Branches"))
+	UFUNCTION(BlueprintCallable, Category = "Blueprint Extensions|Branches", meta = (HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject", CompactNodeTitle = ">=", FriendlyName = "A greater or equal to B?", Keywords = "bxbl int greater equal", ExpandEnumAsExecs = "Branches"))
 	static void Branch_INTGreaterOREqual(int32 Check, int32 Against, TEnumAsByte<EN_IfThenElse>&Branches);
 	//
 	//
@@ -117,7 +117,7 @@ class BXBLEXTENSIONS_API UBxBLibrary : public UBlueprintFunctionLibrary
 	static void Branch_FLessOREqual(float Check, float Against, TEnumAsByte<EN_IfThenElse>&Branches);
 	//
 	/** Branch:: Checks if float 'A' is greater or equal to float 'B'. */
-	UFUNCTION(BlueprintCallable, Category = "Blueprint Extensions|Branches", meta = (HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject", CompactNodeTitle = ">=", FriendlyName = "A greater pr equal to B?", Keywords = "bxbl float greater equal", ExpandEnumAsExecs = "Branches"))
+	UFUNCTION(BlueprintCallable, Category = "Blueprint Extensions|Branches", meta = (HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject", CompactNodeTitle = ">=", FriendlyName = "A greater or equal to B?", Keywords = "bxbl float greater equal", ExpandEnumAsExecs = "Branches"))
 	static void Branch_FGreaterOREqual(float Check, float Against, TEnumAsByte<EN_IfThenElse>&Branches);
 	//
 	//
