@@ -1,21 +1,24 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "BxBLExtensionsPrivatePCH.h"
 #include "BxBLibrary.h"
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////
-//     Blueprint Extension Library     //
-///////////////////////////////////////////////
+
+//////////////////////////////////////////////
+//		Blueprint Extension Library			//
+//////////////////////////////////////////////
 
 UBxBLibrary::UBxBLibrary(const class FObjectInitializer& PCIP) : Super(PCIP) {}
 //
 //
-/////////////////////////////////////////////////////////
-//     ::BRANCHES::                                      //
-/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//		::BRANCHES::								//
+//////////////////////////////////////////////////////
 //
 //
-void UBxBLibrary::Branch_OEquals(UObject *Check, UObject *Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_OEquals(UObject *Check, UObject *Against, EN_Equals &Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	}
@@ -24,8 +27,7 @@ void UBxBLibrary::Branch_OEquals(UObject *Check, UObject *Against, TEnumAsByte<E
 	}
 }
 //
-void UBxBLibrary::Branch_ONotEqual(UObject *Check, UObject *Against, TEnumAsByte<EN_NotEqual>&Branches)
-{
+void UBxBLibrary::Branch_ONotEqual(UObject *Check, UObject *Against, EN_NotEqual &Branches) {
 	if (Check != Against) {
 		Branches = EN_NotEqual::IfNotEqual;
 	}
@@ -35,8 +37,7 @@ void UBxBLibrary::Branch_ONotEqual(UObject *Check, UObject *Against, TEnumAsByte
 }
 //
 //
-void UBxBLibrary::Branch_STEquals(FString Check, FString Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_STEquals(FString Check, FString Against, EN_Equals &Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	}
@@ -45,8 +46,7 @@ void UBxBLibrary::Branch_STEquals(FString Check, FString Against, TEnumAsByte<EN
 	}
 }
 //
-void UBxBLibrary::Branch_TXEquals(FText Check, FText Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_TXEquals(FText Check, FText Against, EN_Equals &Branches) {
 	if (Check.ToString() == Against.ToString()) {
 		Branches = EN_Equals::IfEquals;
 	} else {
@@ -55,8 +55,7 @@ void UBxBLibrary::Branch_TXEquals(FText Check, FText Against, TEnumAsByte<EN_Equ
 }
 //
 //
-void UBxBLibrary::Branch_INTEquals(int32 Check, int32 Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_INTEquals(int32 Check, int32 Against, EN_Equals &Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	} else {
@@ -64,8 +63,7 @@ void UBxBLibrary::Branch_INTEquals(int32 Check, int32 Against, TEnumAsByte<EN_Eq
 	}
 }
 //
-void UBxBLibrary::Branch_INTNotEqual(int32 Check, int32 Against, TEnumAsByte<EN_NotEqual>&Branches)
-{
+void UBxBLibrary::Branch_INTNotEqual(int32 Check, int32 Against, EN_NotEqual &Branches) {
 	if (Check != Against) {
 		Branches = EN_NotEqual::IfNotEqual;
 	} else {
@@ -73,8 +71,7 @@ void UBxBLibrary::Branch_INTNotEqual(int32 Check, int32 Against, TEnumAsByte<EN_
 	}
 }
 //
-void UBxBLibrary::Branch_INTLessThan(int32 Check, int32 Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_INTLessThan(int32 Check, int32 Against, EN_IfThenElse &Branches) {
 	if (Check < Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	} else {
@@ -82,8 +79,7 @@ void UBxBLibrary::Branch_INTLessThan(int32 Check, int32 Against, TEnumAsByte<EN_
 	}
 }
 //
-void UBxBLibrary::Branch_INTGreaterThan(int32 Check, int32 Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_INTGreaterThan(int32 Check, int32 Against, EN_IfThenElse &Branches) {
 	if (Check > Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	} else {
@@ -91,8 +87,7 @@ void UBxBLibrary::Branch_INTGreaterThan(int32 Check, int32 Against, TEnumAsByte<
 	}
 }
 //
-void UBxBLibrary::Branch_INTLessOREqual(int32 Check, int32 Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_INTLessOREqual(int32 Check, int32 Against, EN_IfThenElse &Branches) {
 	if (Check <= Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	} else {
@@ -100,8 +95,7 @@ void UBxBLibrary::Branch_INTLessOREqual(int32 Check, int32 Against, TEnumAsByte<
 	}
 }
 //
-void UBxBLibrary::Branch_INTGreaterOREqual(int32 Check, int32 Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_INTGreaterOREqual(int32 Check, int32 Against, EN_IfThenElse &Branches) {
 	if (Check >= Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	} else {
@@ -110,8 +104,7 @@ void UBxBLibrary::Branch_INTGreaterOREqual(int32 Check, int32 Against, TEnumAsBy
 }
 //
 //
-void UBxBLibrary::Branch_FEquals(float Check, float Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_FEquals(float Check, float Against, EN_Equals &Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	}
@@ -120,8 +113,7 @@ void UBxBLibrary::Branch_FEquals(float Check, float Against, TEnumAsByte<EN_Equa
 	}
 }
 //
-void UBxBLibrary::Branch_FNotEqual(float Check, float Against, TEnumAsByte<EN_NotEqual>&Branches)
-{
+void UBxBLibrary::Branch_FNotEqual(float Check, float Against, EN_NotEqual &Branches) {
 	if (Check != Against) {
 		Branches = EN_NotEqual::IfNotEqual;
 	}
@@ -130,8 +122,7 @@ void UBxBLibrary::Branch_FNotEqual(float Check, float Against, TEnumAsByte<EN_No
 	}
 }
 //
-void UBxBLibrary::Branch_FLessThan(float Check, float Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_FLessThan(float Check, float Against, EN_IfThenElse &Branches) {
 	if (Check < Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	}
@@ -140,8 +131,7 @@ void UBxBLibrary::Branch_FLessThan(float Check, float Against, TEnumAsByte<EN_If
 	}
 }
 //
-void UBxBLibrary::Branch_FGreaterThan(float Check, float Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_FGreaterThan(float Check, float Against, EN_IfThenElse &Branches) {
 	if (Check > Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	}
@@ -150,8 +140,7 @@ void UBxBLibrary::Branch_FGreaterThan(float Check, float Against, TEnumAsByte<EN
 	}
 }
 //
-void UBxBLibrary::Branch_FLessOREqual(float Check, float Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_FLessOREqual(float Check, float Against, EN_IfThenElse &Branches) {
 	if (Check <= Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	}
@@ -160,8 +149,7 @@ void UBxBLibrary::Branch_FLessOREqual(float Check, float Against, TEnumAsByte<EN
 	}
 }
 //
-void UBxBLibrary::Branch_FGreaterOREqual(float Check, float Against, TEnumAsByte<EN_IfThenElse>&Branches)
-{
+void UBxBLibrary::Branch_FGreaterOREqual(float Check, float Against, EN_IfThenElse &Branches) {
 	if (Check >= Against) {
 		Branches = EN_IfThenElse::IfTrue;
 	}
@@ -171,8 +159,7 @@ void UBxBLibrary::Branch_FGreaterOREqual(float Check, float Against, TEnumAsByte
 }
 //
 //
-void UBxBLibrary::Branch_Color(FLinearColor Check, FLinearColor Against, TEnumAsByte<EN_Match>&Branches, float Tolerance)
-{
+void UBxBLibrary::Branch_Color(FLinearColor Check, FLinearColor Against, EN_Match &Branches, float Tolerance) {
 	if (Check.Equals(Against, Tolerance)) {
 		Branches = EN_Match::IfMatch;
 	} else {
@@ -181,8 +168,7 @@ void UBxBLibrary::Branch_Color(FLinearColor Check, FLinearColor Against, TEnumAs
 }
 //
 //
-void UBxBLibrary::Branch_AEquals(AActor *Check, AActor *Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_AEquals(AActor *Check, AActor *Against, EN_Equals &Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	}
@@ -191,8 +177,7 @@ void UBxBLibrary::Branch_AEquals(AActor *Check, AActor *Against, TEnumAsByte<EN_
 	}
 }
 //
-void UBxBLibrary::Branch_ANotEqual(AActor *Check, AActor *Against, TEnumAsByte<EN_NotEqual>&Branches)
-{
+void UBxBLibrary::Branch_ANotEqual(AActor *Check, AActor *Against, EN_NotEqual &Branches) {
 	if (Check != Against) {
 		Branches = EN_NotEqual::IfNotEqual;
 	}
@@ -202,8 +187,7 @@ void UBxBLibrary::Branch_ANotEqual(AActor *Check, AActor *Against, TEnumAsByte<E
 }
 //
 //
-void UBxBLibrary::Branch_SCEquals(USceneComponent *Check, USceneComponent *Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_SCEquals(USceneComponent *Check, USceneComponent *Against, EN_Equals&Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	}
@@ -212,8 +196,7 @@ void UBxBLibrary::Branch_SCEquals(USceneComponent *Check, USceneComponent *Again
 	}
 }
 //
-void UBxBLibrary::Branch_SCNotEqual(USceneComponent *Check, USceneComponent *Against, TEnumAsByte<EN_NotEqual>&Branches)
-{
+void UBxBLibrary::Branch_SCNotEqual(USceneComponent *Check, USceneComponent *Against, EN_NotEqual &Branches) {
 	if (Check != Against) {
 		Branches = EN_NotEqual::IfNotEqual;
 	}
@@ -223,8 +206,7 @@ void UBxBLibrary::Branch_SCNotEqual(USceneComponent *Check, USceneComponent *Aga
 }
 //
 //
-void UBxBLibrary::Branch_PCEquals(UPrimitiveComponent *Check, UPrimitiveComponent *Against, TEnumAsByte<EN_Equals>&Branches)
-{
+void UBxBLibrary::Branch_PCEquals(UPrimitiveComponent *Check, UPrimitiveComponent *Against, EN_Equals &Branches) {
 	if (Check == Against) {
 		Branches = EN_Equals::IfEquals;
 	}
@@ -233,8 +215,7 @@ void UBxBLibrary::Branch_PCEquals(UPrimitiveComponent *Check, UPrimitiveComponen
 	}
 }
 //
-void UBxBLibrary::Branch_PCNotEqual(UPrimitiveComponent *Check, UPrimitiveComponent *Against, TEnumAsByte<EN_NotEqual>&Branches)
-{
+void UBxBLibrary::Branch_PCNotEqual(UPrimitiveComponent *Check, UPrimitiveComponent *Against, EN_NotEqual &Branches) {
 	if (Check != Against) {
 		Branches = EN_NotEqual::IfNotEqual;
 	}
@@ -244,8 +225,7 @@ void UBxBLibrary::Branch_PCNotEqual(UPrimitiveComponent *Check, UPrimitiveCompon
 }
 //
 //
-void UBxBLibrary::Branch_Trace(TEnumAsByte<ETraceTypeQuery>Check, TEnumAsByte<ETraceTypeQuery>Against, TEnumAsByte<EN_Match>&Branches)
-{
+void UBxBLibrary::Branch_Trace(TEnumAsByte<ETraceTypeQuery>Check, TEnumAsByte<ETraceTypeQuery>Against, EN_Match &Branches) {
 	if (Check.GetValue() == Against.GetValue()) {
 		Branches = EN_Match::IfMatch;
 	}
@@ -254,8 +234,7 @@ void UBxBLibrary::Branch_Trace(TEnumAsByte<ETraceTypeQuery>Check, TEnumAsByte<ET
 	}
 }
 //
-void UBxBLibrary::Branch_PhysMat(TEnumAsByte<EObjectTypeQuery>Check, TEnumAsByte<EObjectTypeQuery>Against, TEnumAsByte<EN_Match>&Branches)
-{
+void UBxBLibrary::Branch_PhysMat(TEnumAsByte<EObjectTypeQuery>Check, TEnumAsByte<EObjectTypeQuery>Against, EN_Match &Branches) {
 	if (Check.GetValue() == Against.GetValue()) {
 		Branches = EN_Match::IfMatch;
 	}
@@ -265,103 +244,137 @@ void UBxBLibrary::Branch_PhysMat(TEnumAsByte<EObjectTypeQuery>Check, TEnumAsByte
 }
 //
 //
-/////////////////////////////////////////////////////////
-//     ::ARITHMETICS::                                  //
-/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//	:ARITHMETICS::									//
+//////////////////////////////////////////////////////
 //
 //
-int32 UBxBLibrary::INTPosIncrement(int32 Value)
-{
+int32 UBxBLibrary::INTPosIncrement(int32 Value) {
 	return Value++;
 }
 //
-int32 UBxBLibrary::INTPreIncrement(int32 Value)
-{
+int32 UBxBLibrary::INTPreIncrement(int32 Value) {
 	return ++Value;
 }
 //
-int32 UBxBLibrary::INTPosDecrement(int32 Value)
-{
+int32 UBxBLibrary::INTPosDecrement(int32 Value) {
 	return Value--;
 }
 //
-int32 UBxBLibrary::INTPreDecrement(int32 Value)
-{
+int32 UBxBLibrary::INTPreDecrement(int32 Value) {
 	return --Value;
 }
 //
-int32 UBxBLibrary::INTIncrement(int32 Value)
-{
+int32 UBxBLibrary::INTIncrement(int32 Value) {
 	return (Value += Value);
 }
 //
-int32 UBxBLibrary::INTDecrement(int32 Value)
-{
+int32 UBxBLibrary::INTDecrement(int32 Value) {
 	return (Value -= Value);
 }
 //
-int32 UBxBLibrary::INTMultiply(int32 Value)
-{
+int32 UBxBLibrary::INTMultiply(int32 Value) {
 	return (Value *= Value);
 }
 //
-int32 UBxBLibrary::INTDivide(int32 Value, int32 i)
-{
+int32 UBxBLibrary::INTDivide(int32 Value, int32 i) {
 	return (Value /= (Value*i));
 }
 //
-int32 UBxBLibrary::INTModulo(int32 Value, int32 i)
-{
+int32 UBxBLibrary::INTModulo(int32 Value, int32 i) {
 	return (Value %= i);
 }
 //
-int32 UBxBLibrary::INTPercent(int32 Value, int32 i)
-{
+int32 UBxBLibrary::INTPercent(int32 Value, int32 i) {
 	return (Value = (Value*i) / 100);
 }
 //
 //
-float UBxBLibrary::FPosIncrement(float Value)
-{
+float UBxBLibrary::FPosIncrement(float Value) {
 	return Value++;
 }
 //
-float UBxBLibrary::FPreIncrement(float Value)
-{
+float UBxBLibrary::FPreIncrement(float Value) {
 	return ++Value;
 }
 //
-float UBxBLibrary::FPosDecrement(float Value)
-{
+float UBxBLibrary::FPosDecrement(float Value) {
 	return Value--;
 }
 //
-float UBxBLibrary::FPreDecrement(float Value)
-{
+float UBxBLibrary::FPreDecrement(float Value) {
 	return --Value;
 }
 //
-float UBxBLibrary::FIncrement(float Value)
-{
+float UBxBLibrary::FIncrement(float Value) {
 	return (Value += Value);
 }
 //
-float UBxBLibrary::FDecrement(float Value)
-{
+float UBxBLibrary::FDecrement(float Value) {
 	return (Value -= Value);
 }
 //
-float UBxBLibrary::FMultiply(float Value)
-{
+float UBxBLibrary::FMultiply(float Value) {
 	return (Value *= Value);
 }
 //
-float UBxBLibrary::FDivide(float Value, float f)
-{
+float UBxBLibrary::FDivide(float Value, float f) {
 	return (Value /= (Value*f));
 }
 //
-float UBxBLibrary::FPercent(float Value, float f)
-{
+float UBxBLibrary::FPercent(float Value, float f) {
 	return (Value = (Value*f) / 100);
 }
+//
+//
+//////////////////////////////////////////////////////
+//		::METHODS::									//
+//////////////////////////////////////////////////////
+//
+//
+bool UBxBLibrary::LoadLevelInstance(UObject* WorldContextObject, FString MapFolderOffOfContent, FString LevelName, int32 InstanceNumber, FVector Location, FRotator Rotation) {
+	if(!WorldContextObject) return false;
+	//
+	UWorld* const World = GEngine->GetWorldFromContextObject(WorldContextObject);
+	if(!World) return false;
+	//
+	FString FullName = "/Game/" + MapFolderOffOfContent + "/" + LevelName;
+	FName LevelFName = FName(*FullName);
+	FString PackageFileName = FullName;   
+	//
+	ULevelStreamingKismet* StreamingLevel = NewObject<ULevelStreamingKismet>((UObject*)GetTransientPackage(),ULevelStreamingKismet::StaticClass());
+	//
+	if(!StreamingLevel) {
+		return false;
+	}
+	//
+	FString LongLevelPackageName = FPackageName::FilenameToLongPackageName(PackageFileName);
+	FString UniqueLevelPackageName = LongLevelPackageName;
+	UniqueLevelPackageName += "_Instance_" + FString::FromInt(InstanceNumber);
+	//
+	StreamingLevel->SetWorldAssetByPackageName(FName(*UniqueLevelPackageName));
+	//
+    if (World->IsPlayInEditor()) {
+		FWorldContext WorldContext = GEngine->GetWorldContextFromWorldChecked(World);
+		StreamingLevel->RenameForPIE(WorldContext.PIEInstance);
+	}
+	//
+	StreamingLevel->LevelColor = FColor::MakeRandomColor();
+	StreamingLevel->bShouldBeLoaded = true;
+	StreamingLevel->bShouldBeVisible = true;
+	StreamingLevel->bShouldBlockOnLoad = false;
+	StreamingLevel->bInitiallyLoaded = true;
+	StreamingLevel->bInitiallyVisible = true;
+	//
+	StreamingLevel->LevelTransform = FTransform(Rotation,Location);
+	StreamingLevel->PackageNameToLoad = LevelFName;
+	//
+	if (!FPackageName::DoesPackageExist(StreamingLevel->PackageNameToLoad.ToString(),NULL,&PackageFileName)) {        
+		return false;
+	}
+	//
+	StreamingLevel->PackageNameToLoad = FName(*LongLevelPackageName);
+    World->StreamingLevels.Add(StreamingLevel);
+	//
+	return true;
+ }
